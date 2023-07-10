@@ -37,6 +37,7 @@ return new class extends Migration
             $table->string('modal_name_type')->nullable();
             $table->string('variant_name')->nullable();
             $table->string('iib_tac_code')->nullable();
+            $table->integer('vehicle_modal_type')->nullable();
             $table->integer('status')->nullable()->default(1);
             $table->timestamp('deleted_at')->nullable();
             $table->timestamp('created_at')->useCurrent();
