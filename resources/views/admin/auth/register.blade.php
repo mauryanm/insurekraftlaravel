@@ -8,7 +8,8 @@
                     <div class="col-xl-12">
                         <div class="auth-form">
                             <div class="text-center mb-3">
-                                <a href="index.html"><img src="{{ URL::to('assets/images/logo-full.png') }}" alt=""></a>
+                                {{-- <a href="index.html"><img src="{{ URL::to('assets/images/logo-full.png') }}" alt=""></a> --}}
+                                <h2>InsureKraft</h2>
                             </div>
                             <h4 class="text-center mb-4">Sign up your account</h4>
                             <form action="{{ route('admin.register') }}" method="POST">

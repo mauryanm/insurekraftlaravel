@@ -3,20 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
 use Illuminate\Http\Request;
+use App\Models\VehicleType;
 use DB;
 use Brian2694\Toastr\Facades\Toastr;
 
-class UserController extends Controller
+class VehicleTypeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $users = DB::table('admins')->get();
-        return view('admin.user.index',compact("users"));
+        $users = DB::table('vehicle_types')->paginate(10);
+        return view('admin.vehicle-types.index',compact("users"));
     }
 
     /**
@@ -24,7 +21,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.add');
+        return view('admin.vehicle-types.add');
     }
 
     /**
@@ -33,7 +30,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         Toastr::success('User added successfully :)','Success');
-        return redirect()->to('admin/users');
+        return redirect()->to('admin/vehicle-type');
     }
 
     /**
@@ -49,8 +46,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        $user = Admin::findOrFail($id);
-        return view('admin.user.edit', compact("user"));
+        $user = VehicleType::findOrFail($id);
+        return view('admin.vehicle-types.edit', compact("user"));
     }
 
     /**
@@ -59,7 +56,7 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
         Toastr::success('User updated successfully :)','Success');
-        return redirect()->to('admin/users');
+        return redirect()->to('admin/vehicle-type');
     }
 
     /**

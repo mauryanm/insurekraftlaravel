@@ -9,44 +9,43 @@
             </div>
             <div class="card-body">
                 <div class="basic-form">
-                    <form name="add" class="formvalidate" method="POST" action="{{ route('admin.users.update', $user->id) }}">
+                    <form name="add" class="formvalidate" method="POST" action="{{ route('admin.users.store') }}">
                         @csrf
-                        {{ method_field('PUT') }}
                         {{-- @method('PUT') --}}
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label col-form-label">Name<span class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <input type="text" value="{{$user->name}}" class="form-control" name="name" required>
+                                <input type="text" class="form-control" name="name" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label col-form-label">Email<span class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <input type="email" value="{{$user->email}}" class="form-control" name="email" required>
+                                <input type="email" class="form-control" name="email" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label col-form-label">Phone<span class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="phone_number" data-rule-number="true" value="{{$user->phone}}" required>
+                                <input type="text" class="form-control" name="phone_number" data-rule-number="true" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label col-form-label">Position<span class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <input type="text" value="{{$user->position}}" class="form-control" name="position" required>
+                                <input type="text" class="form-control" name="position" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label col-form-label">Department<span class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <input type="text"  value="{{$user->department}}" class="form-control" name="department" required>
+                                <input type="text" class="form-control" name="department" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label col-form-label">Discription</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control form-control editor" id="ckeditor" name="description" required>{{$user->description}}</textarea>
+                                <textarea class="form-control form-control editor" id="ckeditor" name="description" required></textarea>
                             </div>
                         </div>
                         <div class="mb-3 row">

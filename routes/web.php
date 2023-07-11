@@ -50,8 +50,12 @@ Route::group(['middleware' => ['auth:admin'],'prefix'=>'admin','as'=>'admin.'],f
         Route::get('/dashboard', 'index')->name('dashboard');
         Route::get('/profile', 'index')->name('profile');
     });
+    // Route::controller(\App\Http\Controllers\Admin\UserController::class)->group(function () {
+    //     Route::get('user/table', 'index')->name('user/table');
+    // });
     // Route::controller(\App\Http\Controllers\Admin\DashboardController::class)->group(function () {
     Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+    Route::resource('vehicle-type', \App\Http\Controllers\Admin\VehicleTypeController::class);
     // });
 });
 // -----------------------------login-------------------------------//

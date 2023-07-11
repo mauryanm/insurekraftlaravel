@@ -30,7 +30,7 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ route('user/table') }}">User Management</a></li>
+                    <li><a href="{{ route('admin.users.index') }}">User Management</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
